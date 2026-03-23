@@ -38,9 +38,9 @@ export function Hero() {
       />
 
       <Container className="relative z-10 py-16 md:py-24">
-        <div className="flex flex-col items-center text-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Text content */}
-          <div className="max-w-4xl">
+          <div className="order-2 lg:order-1">
             {/* Eyebrow */}
             <motion.div
               initial={prefersReduced ? {} : { opacity: 0, y: 10 }}
@@ -92,7 +92,7 @@ export function Hero() {
 
             {/* Subheadline */}
             <motion.p
-              className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-wolfden-muted md:text-xl"
+              className="mt-6 max-w-lg text-lg leading-relaxed text-wolfden-muted md:text-xl"
               initial={prefersReduced ? {} : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.3 }}
@@ -103,7 +103,7 @@ export function Hero() {
 
             {/* CTA */}
             <motion.div
-              className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
               initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.5 }}
@@ -119,7 +119,7 @@ export function Hero() {
 
           {/* Video placeholder */}
           <motion.div
-            className="mt-12 w-full max-w-3xl"
+            className="order-1 lg:order-2"
             initial={prefersReduced ? {} : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.0 }}

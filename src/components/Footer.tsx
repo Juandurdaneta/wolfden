@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -38,14 +37,18 @@ export function Footer() {
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand */}
             <div className="lg:col-span-1">
-              <Link href="/" className="group flex items-center">
-                <Image
-                  src="https://assets.cdn.filesafe.space/51Qsl6wHJ95ffvc9IJhH/media/69c1941b9c1188a67d36b297.png"
-                  alt="The Wolf Den Mobile Wellness Lounge"
-                  width={140}
-                  height={42}
-                  className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
-                />
+              <Link href="/" className="group flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-wolfden-blue font-display text-xs font-extrabold text-white">
+                  W
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-display text-base font-extrabold tracking-tight text-white">
+                    THE WOLF DEN
+                  </span>
+                  <span className="text-[10px] font-medium tracking-widest text-wolfden-muted uppercase">
+                    Mobile Wellness Lounge
+                  </span>
+                </div>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-wolfden-muted">
                 Premium mobile cold plunge, sauna, and compression therapy experiences
