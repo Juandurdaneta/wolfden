@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -57,18 +58,15 @@ export function Navigation() {
         <Container>
           <nav className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href="/" className="group flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-wolfden-blue font-display text-sm font-extrabold text-white transition-shadow duration-300 group-hover:shadow-[0_0_20px_rgba(12,123,220,0.4)]">
-                W
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display text-base font-extrabold tracking-tight text-white md:text-lg">
-                  THE WOLF DEN
-                </span>
-                <span className="hidden text-[10px] font-medium tracking-widest text-wolfden-muted uppercase sm:block">
-                  Mobile Wellness Lounge
-                </span>
-              </div>
+            <Link href="/" className="group flex items-center">
+              <Image
+                src="https://assets.cdn.filesafe.space/51Qsl6wHJ95ffvc9IJhH/media/69c1941b9c1188a67d36b297.png"
+                alt="The Wolf Den Mobile Wellness Lounge"
+                width={160}
+                height={48}
+                className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80 md:h-12"
+                priority
+              />
             </Link>
 
             {/* Desktop links */}
