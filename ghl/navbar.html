@@ -3,11 +3,7 @@
   <div class="wd-navbar__container">
     <!-- Logo/Brand -->
     <a href="/home" class="wd-navbar__logo">
-      <div class="wd-navbar__logo-icon">W</div>
-      <div class="wd-navbar__logo-text">
-        <span class="wd-navbar__logo-name">THE WOLF DEN</span>
-        <span class="wd-navbar__logo-tagline">Mobile Wellness Lounge</span>
-      </div>
+      <img src="https://assets.cdn.filesafe.space/51Qsl6wHJ95ffvc9IJhH/media/69c1941b9c1188a67d36b297.png" alt="The Wolf Den Mobile Wellness Lounge" class="wd-navbar__logo-img">
     </a>
 
     <!-- Mobile Menu Toggle -->
@@ -95,46 +91,15 @@
     opacity: 0.85;
   }
 
-  .wd-navbar__logo-icon {
-    display: flex;
-    height: 36px;
-    width: 36px;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-sm);
-    background: var(--clr-blue);
-    font-family: var(--font-display);
-    font-size: 0.875rem;
-    font-weight: 800;
-    color: var(--clr-white);
-    transition: box-shadow 0.3s ease;
+  .wd-navbar__logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
   }
 
-  .wd-navbar__logo:hover .wd-navbar__logo-icon {
-    box-shadow: 0 0 20px var(--clr-blue-glow);
-  }
-
-  .wd-navbar__logo-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .wd-navbar__logo-name {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--clr-white);
-    line-height: 1.2;
-  }
-
-  .wd-navbar__logo-tagline {
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--clr-text-muted);
-    line-height: 1.2;
+  .wd-navbar__logo:hover .wd-navbar__logo-img {
+    opacity: 0.85;
   }
 
   /* Mobile Toggle Button */
@@ -233,8 +198,8 @@
       display: flex;
     }
 
-    .wd-navbar__logo-tagline {
-      display: none;
+    .wd-navbar__logo-img {
+      height: 40px;
     }
 
     .wd-navbar__menu {
@@ -304,14 +269,8 @@
       padding: 0.75rem 0;
     }
 
-    .wd-navbar__logo-icon {
-      height: 32px;
-      width: 32px;
-      font-size: 0.75rem;
-    }
-
-    .wd-navbar__logo-name {
-      font-size: 0.95rem;
+    .wd-navbar__logo-img {
+      height: 36px;
     }
   }
 
