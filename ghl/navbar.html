@@ -20,10 +20,11 @@
         <li><a href="/about" class="wd-navbar__link">About</a></li>
         <li><a href="/services" class="wd-navbar__link">Services</a></li>
         <li><a href="/products" class="wd-navbar__link">Products</a></li>
+        <li><a href="/contact" class="wd-navbar__link">Contact</a></li>
       </ul>
 
       <!-- CTA Button -->
-      <a href="#blueprint" class="wd-navbar__cta">Download Free Blueprint</a>
+      <a href="https://drive.google.com/file/d/1sorGGt0xHgjdKsMQ8xzmIy9w_qOzJDCW/view?usp=sharing" target="_blank" class="wd-navbar__cta">Download Free Blueprint</a>
     </div>
   </div>
 </nav>
@@ -61,9 +62,14 @@
      NAVBAR STYLES
      ======================================== */
   .wd-navbar {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    background: var(--clr-charcoal);
+    background: rgba(28, 28, 28, 0.92);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
     padding: 1rem 0;
     font-family: var(--font-body);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -297,6 +303,22 @@
     var navbarToggle = document.getElementById('wd-navbar-toggle');
     var navbarMenu = document.getElementById('wd-navbar-menu');
     var navbar = document.getElementById('wd-navbar');
+
+    // Move navbar to be a direct child of <body> so position:fixed escapes
+    // any GHL wrapper sections that would otherwise constrain it.
+    if (navbar && navbar.parentNode !== document.body) {
+      document.body.insertBefore(navbar, document.body.firstChild);
+    }
+
+    // Reserve space at the top of the page so content doesn't slide under
+    // the fixed navbar. Re-measures on resize in case the navbar height changes.
+    function syncNavbarOffset() {
+      if (!navbar) return;
+      var h = navbar.offsetHeight;
+      document.body.style.paddingTop = h + 'px';
+    }
+    syncNavbarOffset();
+    window.addEventListener('resize', syncNavbarOffset);
 
     // Mobile Menu Toggle
     if (navbarToggle && navbarMenu) {
